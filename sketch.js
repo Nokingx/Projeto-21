@@ -5,17 +5,23 @@ var music;
 
 function preload(){
     // carregue o som aqui
-    music.loadSound ('music.mp3');
+    music = loadSound ('music.mp3');
 }
 
 function setup(){
-    tela = createTela(800,600);
+    tela = createCanvas(800,600);
 
     bloco1 = createSprite(0,580,360,30);
     bloco1.shapeColor = "blue";
 
     bloco2 = createSprite(295,580,200,30);
     bloco2.shapeColor = "orange";
+
+    bloco3 = createSprite(515,580,200,30);
+    bloco3.shapeColor = "red";
+
+    bloco4 = createSprite(740,580,220,30);
+    bloco4.shapeColor = "green";
 
     //crie aqui mais dois blocos, ou seja, bloco3 e bloco4
     
@@ -29,7 +35,7 @@ function setup(){
 
 function draw() {
     background(rgb(169,169,169));
-    arestas=createArestasprites();
+    arestas=createEdgeSprites();
     bola.bounceOff(arestas);
 
     
